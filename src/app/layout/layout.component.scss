@@ -1,0 +1,25 @@
+.container {
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  .header {
+  }
+  .main-container {
+    display: flex;
+    width: 100%;
+    .side-nav {
+      width: 350px;
+      min-width: 230px;
+      min-height: calc(100vh - 70px);
+      background-color: #481826;
+      color: #fff;
+      box-shadow: 5px 5px 5px #939393;
+      transition: 0.5s;
+      @media only screen and (max-width: 1300px) {
+        width: 15px;
+        min-width: 100px;
+      }
+    }
+  }
+}

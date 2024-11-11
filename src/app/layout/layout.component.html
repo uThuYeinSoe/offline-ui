@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="header">
+    <offlineWeb-header></offlineWeb-header>
+  </div>
+  <div class="main-container">
+    <div *ngIf="role === 'SUPER_ADMIN'" class="side-nav">
+      <offlineWeb-super-admin-sidenav></offlineWeb-super-admin-sidenav>
+    </div>
+    <div *ngIf="role === 'ADMIN'" class="side-nav">
+      <offlineWeb-admin-sidenav></offlineWeb-admin-sidenav>
+    </div>
+    <div *ngIf="role === 'USER'" class="side-nav">
+      <offlineWeb-user-sidenav></offlineWeb-user-sidenav>
+    </div>
+    <div class="main">
+      <offlineWeb-main></offlineWeb-main>
+    </div>
+  </div>
+</div>

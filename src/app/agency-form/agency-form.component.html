@@ -1,0 +1,732 @@
+<div class="main-transition-record">
+  <div class="signin">
+    <div class="content">
+      <h2>Transiton Record</h2>
+
+      <form class="form" [formGroup]="transtionRecord" (ngSubmit)="onSubmit()">
+        <div class="inputBox">
+          <select
+            name="transactionType"
+            formControlName="transactionType"
+            required
+            (change)="onTransactionTypeChange($event)"
+          >
+            <option *ngFor="let type of transactionTypes" [value]="type.value">
+              {{ type.label }}
+            </option>
+          </select>
+          <i>Transaction Type</i>
+        </div>
+
+        <div *ngIf="selectedTransactionType === 'MSC'" class="show-input">
+          <div class="inputBox">
+            <input
+              type="text"
+              name="branchCode"
+              required
+              formControlName="branchCode"
+            />
+            <i>Branch Code</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="trnCode"
+              required
+              formControlName="trnCode"
+            />
+            <i>TrnCode Code</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="drAccountNumber"
+              required
+              formControlName="drAccountNumber"
+            />
+            <i>Dr Account Number</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="crGLNumber"
+              required
+              formControlName="crGLNumber"
+            />
+            <i>Cr GLNumber</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="amount"
+              required
+              formControlName="amount"
+            />
+            <i>Amount</i>
+          </div>
+        </div>
+
+        <div *ngIf="selectedTransactionType === 'CHW'" class="show-input">
+          <div class="inputBox">
+            <input
+              type="text"
+              name="branchCode"
+              required
+              formControlName="branchCode"
+            />
+            <i>Branch Code</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="trnCode"
+              required
+              formControlName="trnCode"
+            />
+            <i>TrnCode Code</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="drAccountNumber"
+              required
+              formControlName="drAccountNumber"
+            />
+            <i>Dr Account Number</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="amount"
+              required
+              formControlName="amount"
+            />
+            <i>Amount</i>
+          </div>
+        </div>
+
+        <div *ngIf="selectedTransactionType === 'CHD'" class="show-input">
+          <div class="inputBox">
+            <input
+              type="text"
+              name="branchCode"
+              required
+              formControlName="branchCode"
+            />
+            <i>Branch Code</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="trnCode"
+              required
+              formControlName="trnCode"
+            />
+            <i>TrnCode Code</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="crAccountNumber"
+              required
+              formControlName="crAccountNumber"
+            />
+            <i>Cr Account Number</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="amount"
+              required
+              formControlName="amount"
+            />
+            <i>Amount</i>
+          </div>
+        </div>
+
+        <div *ngIf="selectedTransactionType === 'CHL'" class="show-input">
+          <div class="inputBox">
+            <input
+              type="text"
+              name="branchCode"
+              required
+              formControlName="branchCode"
+            />
+            <i>Branch Code</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="trnCode"
+              required
+              formControlName="trnCode"
+            />
+            <i>TrnCode Code</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="drAccountNumber"
+              required
+              formControlName="drAccountNumber"
+            />
+            <i>Dr Account Number</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="chequeNumber"
+              required
+              formControlName="chequeNumber"
+            />
+            <i>Cheque Number</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="crAccountNumber"
+              required
+              formControlName="crAccountNumber"
+            />
+            <i>Cr Account Number</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="amount"
+              required
+              formControlName="amount"
+            />
+            <i>Amount</i>
+          </div>
+        </div>
+
+        <div *ngIf="selectedTransactionType === 'CQL'" class="show-input">
+          <div class="inputBox">
+            <input
+              type="text"
+              name="branchCode"
+              required
+              formControlName="branchCode"
+            />
+            <i>Branch Code</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="trnCode"
+              required
+              formControlName="trnCode"
+            />
+            <i>TrnCode Code</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="drAccountNumber"
+              required
+              formControlName="drAccountNumber"
+            />
+            <i>Dr Account Number</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="chequeNumber"
+              required
+              formControlName="chequeNumber"
+            />
+            <i>Cheque Number</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="amount"
+              required
+              formControlName="amount"
+            />
+            <i>Amount</i>
+          </div>
+        </div>
+
+        <div *ngIf="selectedTransactionType === 'OEC'" class="show-input">
+          <div class="inputBox">
+            <input
+              type="text"
+              name="branchCode"
+              required
+              formControlName="branchCode"
+            />
+            <i>Branch Code</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="trnCode"
+              required
+              formControlName="trnCode"
+            />
+            <i>TrnCode Code</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="poNumber"
+              required
+              formControlName="poNumber"
+            />
+            <i>Po Number</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="amount"
+              required
+              formControlName="amount"
+            />
+            <i>Amount</i>
+          </div>
+        </div>
+
+        <div *ngIf="selectedTransactionType === 'OET'" class="show-input">
+          <div class="inputBox">
+            <input
+              type="text"
+              name="branchCode"
+              required
+              formControlName="branchCode"
+            />
+            <i>Branch Code</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="trnCode"
+              required
+              formControlName="trnCode"
+            />
+            <i>TrnCode Code</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="poNumber"
+              required
+              formControlName="poNumber"
+            />
+            <i>Po Number</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="crAccountNumber"
+              required
+              formControlName="crAccountNumber"
+            />
+            <i>Cr Account Number</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="amount"
+              required
+              formControlName="amount"
+            />
+            <i>Amount</i>
+          </div>
+        </div>
+
+        <div *ngIf="selectedTransactionType === 'FWT'" class="show-input">
+          <div class="inputBox">
+            <input
+              type="text"
+              name="branchCode"
+              required
+              formControlName="branchCode"
+            />
+            <i>Branch Code</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="trnCode"
+              required
+              formControlName="trnCode"
+            />
+            <i>TrnCode Code</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="drAccountNumber"
+              required
+              formControlName="drAccountNumber"
+            />
+            <i>Dr Account Number</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="amount"
+              required
+              formControlName="amount"
+            />
+            <i>Amount</i>
+          </div>
+        </div>
+
+        <div *ngIf="selectedTransactionType === 'CWC'" class="show-input">
+          <div class="inputBox">
+            <input
+              type="text"
+              name="branchCode"
+              required
+              formControlName="branchCode"
+            />
+            <i>Branch Code</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="trnCode"
+              required
+              formControlName="trnCode"
+            />
+            <i>TrnCode Code</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="drAccountNumber"
+              required
+              formControlName="drAccountNumber"
+            />
+            <i>Dr Account Number</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="amount"
+              required
+              formControlName="amount"
+            />
+            <i>Amount</i>
+          </div>
+        </div>
+
+        <div *ngIf="selectedTransactionType === 'CWT'" class="show-input">
+          <div class="inputBox">
+            <input
+              type="text"
+              name="branchCode"
+              required
+              formControlName="branchCode"
+            />
+            <i>Branch Code</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="trnCode"
+              required
+              formControlName="trnCode"
+            />
+            <i>TrnCode Code</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="drAccountNumber"
+              required
+              formControlName="drAccountNumber"
+            />
+            <i>Dr Account Number</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="crAccountNumber"
+              required
+              formControlName="crAccountNumber"
+            />
+            <i>Cr Account Number</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="amount"
+              required
+              formControlName="amount"
+            />
+            <i>Amount</i>
+          </div>
+        </div>
+
+        <div *ngIf="selectedTransactionType === 'PLC'" class="show-input">
+          <div class="inputBox">
+            <input
+              type="text"
+              name="branchCode"
+              required
+              formControlName="branchCode"
+            />
+            <i>Branch Code</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="trnCode"
+              required
+              formControlName="trnCode"
+            />
+            <i>TrnCode Code</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="poNumber"
+              required
+              formControlName="poNumber"
+            />
+            <i>Po Number</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="amount"
+              required
+              formControlName="amount"
+            />
+            <i>Amount</i>
+          </div>
+        </div>
+
+        <div *ngIf="selectedTransactionType === 'MGC'" class="show-input">
+          <div class="inputBox">
+            <input
+              type="text"
+              name="branchCode"
+              required
+              formControlName="branchCode"
+            />
+            <i>Branch Code</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="trnCode"
+              required
+              formControlName="trnCode"
+            />
+            <i>TrnCode Code</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="crGLNumber"
+              required
+              formControlName="crGLNumber"
+            />
+            <i>Cr GLNumber</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="amount"
+              required
+              formControlName="amount"
+            />
+            <i>Amount</i>
+          </div>
+        </div>
+
+        <div *ngIf="selectedTransactionType === 'GLT'" class="show-input">
+          <div class="inputBox">
+            <input
+              type="text"
+              name="branchCode"
+              required
+              formControlName="branchCode"
+            />
+            <i>Branch Code</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="trnCode"
+              required
+              formControlName="trnCode"
+            />
+            <i>TrnCode Code</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="gcNumber"
+              required
+              formControlName="gcNumber"
+            />
+            <i>Gc Number</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="crAccountNumber"
+              required
+              formControlName="crAccountNumber"
+            />
+            <i>Cr Account Number</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="amount"
+              required
+              formControlName="amount"
+            />
+            <i>Amount</i>
+          </div>
+        </div>
+
+        <div *ngIf="selectedTransactionType === 'GLC'" class="show-input">
+          <div class="inputBox">
+            <input
+              type="text"
+              name="branchCode"
+              required
+              formControlName="branchCode"
+            />
+            <i>Branch Code</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="trnCode"
+              required
+              formControlName="trnCode"
+            />
+            <i>TrnCode Code</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="gcNumber"
+              required
+              formControlName="gcNumber"
+            />
+            <i>Gc Number</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="amount"
+              required
+              formControlName="amount"
+            />
+            <i>Amount</i>
+          </div>
+        </div>
+
+        <div *ngIf="selectedTransactionType === 'BLT'" class="show-input">
+          <div class="inputBox">
+            <input
+              type="text"
+              name="branchCode"
+              required
+              formControlName="branchCode"
+            />
+            <i>Branch Code</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="trnCode"
+              required
+              formControlName="trnCode"
+            />
+            <i>TrnCode Code</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="crAccountNumber"
+              required
+              formControlName="crAccountNumber"
+            />
+            <i>Cr Account Number</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="gcNumber"
+              required
+              formControlName="gcNumber"
+            />
+            <i>Gc Number</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="amount"
+              required
+              formControlName="amount"
+            />
+            <i>Amount</i>
+          </div>
+        </div>
+
+        <div *ngIf="selectedTransactionType === 'AAT'" class="show-input">
+          <div class="inputBox">
+            <input
+              type="text"
+              name="branchCode"
+              required
+              formControlName="branchCode"
+            />
+            <i>Branch Code</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="trnCode"
+              required
+              formControlName="trnCode"
+            />
+            <i>TrnCode Code</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="crAccountNumber"
+              required
+              formControlName="crAccountNumber"
+            />
+            <i>Cr Account Number</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="drAccountNumber"
+              required
+              formControlName="drAccountNumber"
+            />
+            <i>Dr Account Number</i>
+          </div>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="amount"
+              required
+              formControlName="amount"
+            />
+            <i>Amount</i>
+          </div>
+        </div>
+
+        <div class="inputBox">
+          <button type="submit">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

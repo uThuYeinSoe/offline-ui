@@ -1,0 +1,49 @@
+<div class="transition-record-branch">
+  <h2>Transaction Records</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>No.</th>
+        <th>TRN Code</th>
+        <th>Instrument Type</th>
+        <th>Branch Code</th>
+        <th>Trn Code</th>
+        <th>Dr Account Number</th>
+        <th>Cr Account Number</th>
+        <th>Cr GL Number</th>
+        <th>RM Number</th>
+        <th>PO Number</th>
+        <th>GC Number</th>
+        <th>Cheque Number</th>
+        <th>Amount</th>
+        <th>Save DateTime</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let record of transitionRecArr; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ record.transactionType }}</td>
+        <td>{{ record.instrumentType }}</td>
+        <td>{{ record.branchCode }}</td>
+        <td>{{ record.trnCode }}</td>
+        <td>{{ record.drAccountNumber }}</td>
+        <td>{{ record.crAccountNumber }}</td>
+        <td>{{ record.crGLNumber }}</td>
+        <td>{{ record.rmNumber }}</td>
+        <td>{{ record.poNumber }}</td>
+        <td>{{ record.gcNumber }}</td>
+        <td>{{ record.chequeNumber }}</td>
+        <td>{{ record.amount }}</td>
+        <td>{{ record.saveDateTime }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Loading spinner or indicator -->
+  <div *ngIf="isLoading" class="loading-indicator">Loading more records...</div>
+
+  <!-- No more data message -->
+  <div *ngIf="isLastPage && !isLoading" class="no-more-data">
+    No more records to load.
+  </div>
+</div>

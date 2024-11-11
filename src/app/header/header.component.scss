@@ -1,0 +1,41 @@
+.header {
+  height: 70px;
+  padding: 20px 50px;
+  background-color: #481826;
+  color: #f1f1f1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 5px 5px 5px #939393;
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    img {
+      width: 50px;
+      height: auto;
+    }
+    span {
+      font-size: 30px;
+      font-weight: bold;
+    }
+  }
+  .user {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    .user-image {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid #f1f1f1;
+      background-color: #fbd501;
+      color: #481826;
+      margin-left: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+  }
+}

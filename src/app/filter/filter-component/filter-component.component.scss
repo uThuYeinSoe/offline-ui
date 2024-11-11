@@ -1,0 +1,52 @@
+.filter-component {
+  display: flex;
+  padding-left: 1rem;
+  width: 100%;
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f1f1f1;
+
+  .input-gp {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    align-items: center;
+    margin: 16px 0;
+    color: #481826;
+    padding-left: 1rem;
+    lable {
+      font-size: 12px;
+    }
+    input {
+      padding: 6px 0;
+      font-size: 14px;
+      padding-left: 5px;
+      width: 200px;
+      height: 25px;
+      white-space: nowrap;
+    }
+  }
+  button {
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    justify-content: center;
+    display: block;
+    color: #f1f1f1;
+    background: #691c32;
+    font-size: 1em;
+    font-weight: bold;
+    outline: none;
+    border: 1px solid #f1f1f1;
+    border-radius: 5px;
+    transition: 0.2s ease-in;
+    cursor: pointer;
+    margin: 16px 0;
+    margin-left: 1rem;
+  }
+
+  button:hover {
+    background: #481826;
+  }
+}

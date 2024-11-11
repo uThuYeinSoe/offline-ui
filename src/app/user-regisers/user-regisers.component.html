@@ -1,0 +1,29 @@
+<div class="register-maincontainer">
+  <div class="backdrop"></div>
+  <div class="register-box">
+    <div class="register-header">
+      <h3>Upload Excel File</h3>
+    </div>
+    <div class="register-body">
+      <div class="register-gp">
+        <div class="icon-container">
+          <i class="fa-solid fa-person-through-window"></i>
+        </div>
+        <input
+          class="upload-input"
+          type="file"
+          (change)="onFileChange($event)"
+          accept=".xlsx, .xls"
+        />
+      </div>
+      <p>Please Upload User Register With Excel Format</p>
+      <button type="submit" (click)="onRegisterUpload()">
+        Register Upload
+      </button>
+      <p class="register-success" *ngIf="registrationComplete">
+        All Users Registered Successfully
+      </p>
+    </div>
+    <div class="contact-footer"></div>
+  </div>
+</div>

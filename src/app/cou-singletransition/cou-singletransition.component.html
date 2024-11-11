@@ -1,0 +1,205 @@
+<div class="single-transition-container">
+  <h2>Transaction Records</h2>
+  <div class="transition-body">
+    <div class="container">
+      <div class="transtionDataGp">
+        <p class="transtion-label">No.</p>
+        <p>:</p>
+        <p class="transition-data">{{ singleTransitionObj.transitionId }}</p>
+      </div>
+      <div class="transtionDataGp">
+        <p class="transtion-label">TRN Code</p>
+        <p>:</p>
+        <p class="transition-data">{{ singleTransitionObj.trnCode }}</p>
+      </div>
+      <div class="transtionDataGp">
+        <p class="transtion-label">Instrument Type</p>
+        <p>:</p>
+        <p class="transition-data">{{ singleTransitionObj.instrumentType }}</p>
+      </div>
+      <div class="transtionDataGp">
+        <p class="transtion-label">Branch Code</p>
+        <p>:</p>
+        <p class="transition-data">{{ singleTransitionObj.branchCode }}</p>
+      </div>
+      <div class="transtionDataGp">
+        <p class="transtion-label">Trn Code</p>
+        <p>:</p>
+        <p class="transition-data">{{ singleTransitionObj.trnCode }}</p>
+      </div>
+      <div class="transtionDataGp">
+        <p class="transtion-label">Dr Account Number</p>
+        <p>:</p>
+        <p class="transition-data">{{ singleTransitionObj.drAccountNumber }}</p>
+        <button (click)="checkDRAccNum()">Check</button>
+      </div>
+      <div class="transtionDataGp">
+        <p class="transtion-label">Cr Account Number</p>
+        <p>:</p>
+        <p class="transition-data">{{ singleTransitionObj.crAccountNumber }}</p>
+        <button (click)="checkCrAccNum()">Check</button>
+      </div>
+      <div class="transtionDataGp">
+        <p class="transtion-label">Cr GL Number</p>
+        <p>:</p>
+        <p class="transition-data">{{ singleTransitionObj.crGLNumber }}</p>
+        <button (click)="checkCrGLNum()">Check</button>
+      </div>
+      <div class="transtionDataGp">
+        <p class="transtion-label">RM Number</p>
+        <p>:</p>
+        <p class="transition-data">{{ singleTransitionObj.rmNumber }}</p>
+        <button (click)="checkRmNum()">Check</button>
+      </div>
+      <div class="transtionDataGp">
+        <p class="transtion-label">PO Number</p>
+        <p>:</p>
+        <p class="transition-data">{{ singleTransitionObj.poNumber }}</p>
+        <button (click)="checkPoNum()">Check</button>
+      </div>
+      <div class="transtionDataGp">
+        <p class="transtion-label">GC Number</p>
+        <p>:</p>
+        <p class="transition-data">{{ singleTransitionObj.gcNumber }}</p>
+        <button (click)="checkGCNum()">Check</button>
+      </div>
+      <div class="transtionDataGp">
+        <p class="transtion-label">Cheque Number</p>
+        <p>:</p>
+        <p class="transition-data">{{ singleTransitionObj.chequeNumber }}</p>
+        <button (click)="checkChequeNum()">Check</button>
+      </div>
+      <div class="transtionDataGp">
+        <p class="transtion-label">Amount</p>
+        <p>:</p>
+        <p class="transition-data">{{ singleTransitionObj.amount }}</p>
+      </div>
+      <div class="transtionDataGp">
+        <p class="transtion-label">Save User</p>
+        <p>:</p>
+        <p class="transition-data">{{ singleTransitionObj.saveUser }}</p>
+      </div>
+      <div class="transtionDataGp">
+        <p class="transtion-label">Save DateTime</p>
+        <p>:</p>
+        <p class="transition-data">{{ singleTransitionObj.saveDateTime }}</p>
+      </div>
+      <div class="btn-gp">
+        <button class="confirm-btm" (click)="onAcceptData()">Confirm</button>
+        <button class="reject-btn" (click)="onRejectData()">Reject</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" [ngClass]="{ show: isModalVisible }" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <h2>Chick User Info</h2>
+    <div class="check-info-gp">
+      <span>branchCode</span>
+      <span>:</span>
+      <span>{{ checkInfoObj.branchCode }}</span>
+    </div>
+    <div class="check-info-gp">
+      <span>custAccNo</span>
+      <span>:</span>
+      <span>{{ checkInfoObj.custAccNo }}</span>
+    </div>
+    <div class="check-info-gp">
+      <span>acyWithdrawBal</span>
+      <span>:</span>
+      <span>{{ checkInfoObj.acyWithdrawBal }}</span>
+    </div>
+    <div class="check-info-gp">
+      <span>openingBal</span>
+      <span>:</span>
+      <span>{{ checkInfoObj.openingBal }}</span>
+    </div>
+    <div class="check-info-gp">
+      <span>acDesc</span>
+      <span>:</span>
+      <span>{{ checkInfoObj.acDesc }}</span>
+    </div>
+    <div class="check-info-gp">
+      <span>custNo</span>
+      <span>:</span>
+      <span>{{ checkInfoObj.custNo }}</span>
+    </div>
+    <div class="check-info-gp">
+      <span>ccy</span>
+      <span>:</span>
+      <span>{{ checkInfoObj.ccy }}</span>
+    </div>
+    <div class="check-info-gp">
+      <span>accountClass</span>
+      <span>:</span>
+      <span>{{ checkInfoObj.accountClass }}</span>
+    </div>
+    <div class="check-info-gp">
+      <span>drGl</span>
+      <span>:</span>
+      <span>{{ checkInfoObj.drGl }}</span>
+    </div>
+    <div class="check-info-gp">
+      <span>crGl</span>
+      <span>:</span>
+      <span>{{ checkInfoObj.crGl }}</span>
+    </div>
+    <div class="check-info-gp">
+      <span>recordStat</span>
+      <span>:</span>
+      <span>{{ checkInfoObj.recordStat }}</span>
+    </div>
+    <div class="check-info-gp">
+      <span>acyCurrBalance</span>
+      <span>:</span>
+      <span>{{ checkInfoObj.acyCurrBalance }}</span>
+    </div>
+    <div class="check-info-gp">
+      <span>addressOne</span>
+      <span>:</span>
+      <span>{{ checkInfoObj.addressOne }}</span>
+    </div>
+    <div class="check-info-gp">
+      <span>addressTwo</span>
+      <span>:</span>
+      <span>{{ checkInfoObj.addressTwo }}</span>
+    </div>
+    <div class="check-info-gp">
+      <span>addressThree</span>
+      <span>:</span>
+      <span>{{ checkInfoObj.addressThree }}</span>
+    </div>
+    <div class="check-info-gp">
+      <span>addressFour</span>
+      <span>:</span>
+      <span>{{ checkInfoObj.addressFour }}</span>
+    </div>
+    <div class="check-info-gp">
+      <span>acStatNoDr</span>
+      <span>:</span>
+      <span>{{ checkInfoObj.acStatNoDr }}</span>
+    </div>
+    <div class="check-info-gp">
+      <span>acStatNoCr</span>
+      <span>:</span>
+      <span>{{ checkInfoObj.acStatNoCr }}</span>
+    </div>
+    <div class="check-info-gp">
+      <span>acStatDormant</span>
+      <span>:</span>
+      <span>{{ checkInfoObj.acStatDormant }}</span>
+    </div>
+    <div class="check-info-gp">
+      <span>acyBlockedAmt</span>
+      <span>:</span>
+      <span>{{ checkInfoObj.acyBlockedAmt }}</span>
+    </div>
+    <div class="check-info-gp">
+      <span>acyEcaBlockedAmt</span>
+      <span>:</span>
+      <span>{{ checkInfoObj.acyEcaBlockedAmt }}</span>
+    </div>
+  </div>
+</div>
